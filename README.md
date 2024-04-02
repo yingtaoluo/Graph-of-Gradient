@@ -46,3 +46,7 @@ Final test_acc:[0.23032734 0.32407207], test_ndcg:[0.34178205 0.34083014],
 Fair test_ethnicity_acc:[[0.22541894 0.31805558]
  [0.25179777 0.34817921]
  [0.22711514 0.32526572]]
+
+**Analysis**
+
+GoG does not only improve algorithmic fairness, but also helps with convergence, since it is a robust model that alleviates noises.
