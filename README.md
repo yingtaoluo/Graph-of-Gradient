@@ -1,5 +1,5 @@
 # Graph-of-Gradient
-This is the official code for "Fairness without Demographics on Electronic Health Records" on AAAI 2024 SSS Clinical Foundation Models.
+This is the official code for "Fairness without Demographics on Electronic Health Records" published in AAAI 2024 SSS Clinical Foundation Models [[paper](https://openreview.net/forum?id=5NJp8WZ0Dn)].
 
 ## Datasets
 MIMIC III: https://physionet.org/content/mimiciii/1.4/  
