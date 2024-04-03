@@ -26,7 +26,7 @@ Luo, Yingtao, et al. "Fairness without Demographics on Electronic Health Records
 ```
 
 ## Test for yourself
-Here, we show an example result on only a single demogrpahic: race. This is a simpler setting (only a few subpopulation groups) but a standard setting adopted by most previous works. Let us run on LSTM as the baseline for this example.
+Here, we show an example result on only a single demogrpahic: race. This is a simpler setting (only a few subpopulation groups) but a standard setting adopted by most previous works. Let us run on RETAIN as the baseline for this example.
 
 For the same parameters (tuned after grid search), specifically, learning rate 3e-3, the results are:  
 (For overall acc/ndcg: [@10, @20]. For ethnicity_acc/ndcg: Row ['WHITE', 'BLACK', 'HISPANIC'], Column [@10, @20].)
