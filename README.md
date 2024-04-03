@@ -28,16 +28,16 @@ Luo, Yingtao, et al. "Fairness without Demographics on Electronic Health Records
 ## Test for yourself
 Here, we show an example result on only a single demogrpahic: race. This is a simpler setting (only a few subpopulation groups) but a standard setting adopted by most previous works. Let us run on RETAIN as the baseline for this example.
 
-For the same parameters (tuned after grid search), specifically, learning rate 3e-3, the results are:  
+For the optimal parameters (tuned after grid search), specifically, learning rate 3e-3 for GoG and 3e-2 for baseline, the results are:  
 (For overall acc/ndcg: [@10, @20]. For ethnicity_acc/ndcg: Row ['WHITE', 'BLACK', 'HISPANIC'], Column [@10, @20].)
 
 **Normal (Basline):**
 
-Final test_acc:[0.17643908 0.26110085], test_ndcg:[0.26656379 0.27345939]
+Final test_acc:[0.20882705 0.30694832], test_ndcg:[0.30849283 0.31679831]
 
-Normal test_ethnicity_acc:[[0.17065003 0.25612097]
- [0.20209396 0.28453418]
- [0.17187903 0.25401088]]
+Normal test_ethnicity_acc:[[0.20409192 0.3007639 ]
+ [0.22128557 0.33219498]
+ [0.22488917 0.30709189]]
 
 **Fair (Baseline + GoG algorithm):**
 
