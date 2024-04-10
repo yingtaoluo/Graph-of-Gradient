@@ -1,8 +1,5 @@
 '''add the root path here'''
 import sys
-sys.path.append(r"/home/luoyingtao/Causal")
-sys.path.append(r"D:/PycharmProjects/Causal")
-sys.path.append(r"C:/Users/87128/PycharmProjects/Causal")
 sys.path.append(r"..")
 
 import os
