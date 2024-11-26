@@ -113,50 +113,6 @@ class Trainer:
         self.valid_loader = data.DataLoader(dataset=self.valid_dataset, batch_size=self.batch_size, shuffle=False)
         self.test_loader = data.DataLoader(dataset=self.test_dataset, batch_size=self.batch_size, shuffle=False)
 
-    def cluster(self):
-        embedding, ethnicity, weighting = [], [], []
-        for i in range(int(len(data_dia)/self.batch_size)):
-            batch_dia = torch.tensor(data_dia[i*self.batch_size:(i+1)*self.batch_size], dtype=torch.float32).to(device)
-            batch_pro = torch.tensor(data_pro[i*self.batch_size:(i+1)*self.batch_size], dtype=torch.float32).to(device)
-            weight, rnn_output = self.adversary(batch_dia, batch_pro)
-            weighting.extend(to_npy(weight).tolist())
-            embedding.extend(to_npy(rnn_output).tolist())
-            ethnicity.extend(demo_array[i*self.batch_size:(i+1)*self.batch_size, -1].tolist())
-
-        unique_ethnicity = list(set(ethnicity))
-        encoded_ethnicity = [unique_ethnicity.index(item) for item in ethnicity]
-        threshold = np.percentile(weighting, 95)
-        pdb.set_trace()
-
-        # Label the weights as 1 or 0 based on the threshold
-        labels = [2 if weight >= threshold else 0 for weight in weighting]
-
-        from sklearn.manifold import TSNE
-        import matplotlib.pyplot as plt
-
-        X = embedding
-        y_true = encoded_ethnicity
-
-        # Apply T-SNE for dimensionality reduction
-        tsne = TSNE(n_components=2, random_state=0)
-        X_2d = tsne.fit_transform(X)
-
-        # Visualize the Ground-Truth Clusters
-        plt.figure(figsize=(12, 5))
-
-        plt.subplot(1, 2, 1)
-        plt.scatter(X_2d[:, 0], X_2d[:, 1], c=y_true, s=30, cmap='viridis')
-        plt.title("Ground Truth Clusters")
-
-        # Visualize the Predicted Clusters
-        plt.subplot(1, 2, 2)
-        plt.scatter(X_2d[:, 0], X_2d[:, 1], c=labels, s=30, marker='x', cmap='viridis')
-        plt.title("Predicted Clusters")
-
-        plt.show()
-
-        pdb.set_trace()
-
     def train(self):
         # set optimizer
         optimizer = optim.Adam(chain(self.model.parameters(), self.layer.parameters()),
