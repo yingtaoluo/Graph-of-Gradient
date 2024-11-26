@@ -42,13 +42,6 @@ device = torch.device("cuda:%d" % GPU if torch.cuda.is_available() and GPU >= 0 
 # print('train_device:{}'.format(device))
 # print('train_gpu:{}'.format(GPU))
 
-# python Normal/train.py lstm 0 0 1e-2 mimic3
-# python Normal/train.py lstm 1 1 1e-2 mimic4 --batch_size 64
-# python Normal/train.py lstm 2 2 1e-2 mimic4 --batch_size 128
-# python Normal/train.py lstm 0 3 1e-2 mimic4 --batch_size 256
-# python Normal/train.py lstm 0 4 1e-2 mimic4 --batch_size 16
-# python Normal/train.py stagenet 2 2 1e-2 mimic4 --batch_size 16
-
 
 class Last_Layer(nn.Module):
     def __init__(self, hidden_size=args.hidden_size):
@@ -384,4 +377,3 @@ if __name__ == '__main__':
 
     trainer = Trainer(model, layer, adversary_model, data_combo, records)
     trainer.train()
-    # trainer.cluster()
