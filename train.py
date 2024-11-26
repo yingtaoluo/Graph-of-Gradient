@@ -15,7 +15,7 @@ from torch import optim
 import torch.utils.data as data
 from tqdm import tqdm
 from utils import *
-from Fair.models import *
+from models import *  # Normal/models
 
 
 # N: batch_size, U: number of unique ICDs, T: number of timestamps, H: embedding dimension, B: size of bucket
