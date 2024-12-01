@@ -1,6 +1,7 @@
 # Graph-of-Gradient
-KDD 2025 "Fairness without Demographics through Learning Graph of Gradients"  
-AAAI 2024 SSS Clinical FMs "Fairness without Demographics on Electronic Health Records"
+## Related Papers
+KDD 2025 "Fairness without Demographics through Learning Graph of Gradients".  
+AAAI 2024 SSS Clinical FMs "Fairness without Demographics on Electronic Health Records".
 
 ## Getting Started
 "Normal" folder contains Baselines (without fairness algorithms).  
